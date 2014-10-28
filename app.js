@@ -49,5 +49,5 @@ io.on('connection', function(socket) {
 });
 
 http.listen(process.env.port, function(){
-  console.log('listening on *:3000');
+  console.log(process.env.port);
 });
