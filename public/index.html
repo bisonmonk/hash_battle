@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hash Battle</title>
+	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen">
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/javascripts/Chart.min.js"></script>
+	<script type="text/javascript" src="/javascripts/moment.min.js"></script>
+	<script type="text/javascript" src="/javascripts/hash.js"></script>
+		
+	</script>
+  </head>
+  <body>
+	<h3>
+		Enter hashtags separated by a space. Please limit to 7 for adequate 		graph coloring.
+	</h3>
+	<input id="m" size="60" placeholder="SFGiants Royals SF KC WorldSeries MLB" />
+	<button id="button">Submit</button>
+	<div id="charts">
+		<div id="counter-container">
+			<ul id="hashtag-counts">
+			
+			</ul>
+		</div>
+		<div id="bar-container">
+			<canvas id="barchart" width="800" height="500"></canvas>
+		</div>
+		<div id="line-container">
+			<canvas id="linechart" width="800" height="500"></canvas>
+		</div>
+	</div>
+	<script>
+	new HashBattle.Visualizer();
+	</script>
+  </body>
+</html>
