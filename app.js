@@ -15,10 +15,10 @@ app.get('/', function(req, res) {
 var Twit = require('twit');
 
 var T = new Twit({
-    consumer_key:         'fIkgfUekYWkzpYf81Hj4Eb8YQ',
-    consumer_secret:      '8SYX5d8HBjU7aE8wRgChgxEzXz9Kva8E1wCDQmwyX6Hf8wl3UX',
-    access_token:         '2457187326-JS7S7fGEMCGbCiTqHFEUdTMJ0PITlUUcHeA51yR',
-    access_token_secret:  'I2tgfJjs0kjuzVnVSokH7CuzrKmtBmvwasbn6G8VB0eMZ'
+    consumer_key:         process.env.consumer_key,
+    consumer_secret:      process.env.consumer_secret,
+    access_token:         process.env.access_token,
+    access_token_secret:  process.env.access_token_secret
 });
 
 io.on('connection', function(socket) {
