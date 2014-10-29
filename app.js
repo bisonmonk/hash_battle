@@ -2,7 +2,6 @@ var express = require('express')
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var routes = require('./routes');
 var path = require('path');
 
 app.set('view engine', 'jade');
@@ -22,7 +21,6 @@ var T = new Twit({
 });
 
 io.on('connection', function(socket) {
-    console.log('connected');
     socket.on('submit hashtags', function(str) {
         var hashtags = str.toLowerCase().split(' ');
         hashtags.forEach(function(tag) {
@@ -30,7 +28,6 @@ io.on('connection', function(socket) {
         });
         var stream = T.stream('statuses/filter', { track: hashtags });
         stream.on('tweet', function(tweet) {
-            console.log("new tweet");
             var data = {};
             data['text'] = tweet.text;
             for (var i = 0; i < hashtags.length; i++) {
