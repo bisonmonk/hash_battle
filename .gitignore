@@ -1,4 +1,4 @@
-node_modules/
-bin/
-routes/
-views/
+node_modules
+bin
+routes
+views
